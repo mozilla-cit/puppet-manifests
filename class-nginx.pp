@@ -1,4 +1,10 @@
 class nginx  {
+	yumrepo { "nginx":
+		baseurl => 	'http://nginx.org/packages/centos/6/x86_64/',
+		descr   =>	'nginx',
+		enabled =>	1,
+		gpgcheck =>	0
+	}
 
 	package { "nginx":
 		ensure	=>	latest
@@ -9,11 +15,6 @@ class nginx  {
 		ensure	=>	file,
 		require	=> Package['nginx'],
 		source	=>	'/root/puppet-manifests/resource/nginx.conf'
-	}
-	file { 'nginx.repo':
-		path   => 	'/etc/yum.repos.d/nginx.repo',
-		ensure => 	file,
-		source =>	'/root/puppet-manifests/resource/nginx.repo'
 	}
 	service { 'nginx':
 		name	=>	'nginx',
