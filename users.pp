@@ -16,7 +16,7 @@ user { 'tom':
 	ensure => 'present',
 	groups => ['wheel'],
 	home => '/home/tom',
-	shell => '/bin/bash',
+	shell => '/bin/zsh',
 }
 
 user { 'mrz':
