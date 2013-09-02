@@ -10,7 +10,11 @@ class nginx  {
 		require	=> Package['nginx'],
 		source	=>	'/root/puppet-manifests/resource/nginx.conf'
 	}
-
+	file { 'nginx.repo':
+		path   => 	'/etc/yum.repos.d/nginx.repo',
+		ensure => 	file,
+		source =>	'/root/puppet-manifests/resource/nginx.repo'
+	}
 	service { 'nginx':
 		name	=>	'nginx',
 		ensure	=>	running,
