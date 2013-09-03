@@ -3,13 +3,13 @@ class redis($redis_ver = '2.4.14') {
   $redis_tar = "redis-$redis_ver.tar.gz"
   $redis_dl = "http://redis.googlecode.com/files/$redis_tar"
 
-  if defined(Package['curl']) == false {
+  Package['curl'] {
     package { "curl":
       ensure => "installed"
     }
   }
 
-  if defined(Package['build-essential']) == false {
+  Package['build-essential'] {
     package { "build-essential":
       ensure => "installed"
     }
