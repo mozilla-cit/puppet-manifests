@@ -2,28 +2,28 @@ user { 'tanner':
 	ensure => 'present',
 	groups => ['wheel'],
 	home => '/home/tanner',
-	shell => '/bin/zsh',
+	shell => '/bin/zsh'
 }
 
 user { 'yousef':
 	ensure => 'present',
 	groups => ['wheel'],
 	home => '/home/yousef',
-	shell => '/bin/bash',
+	shell => '/bin/bash'
 }
 
 user { 'tom':
 	ensure => 'present',
 	groups => ['wheel'],
 	home => '/home/tom',
-	shell => '/bin/zsh',
+	shell => '/bin/zsh'
 }
 
 user { 'mrz':
 	ensure => 'present',
 	groups => ['wheel'],
 	home => '/home/mrz',
-	shell => '/bin/tcsh',
+	shell => '/bin/tcsh'
 }
 
 user { 'ewong':
