@@ -26,3 +26,9 @@ user { 'mrz':
 	shell => '/bin/tcsh',
 }
 
+user { 'ewong':
+	ensure => 'present',
+	groups => ['wheel'],
+	home => '/home/ewong',
+	shell => /bin/bash'
+}
