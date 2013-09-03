@@ -30,5 +30,5 @@ user { 'ewong':
 	ensure => 'present',
 	groups => ['wheel'],
 	home => '/home/ewong',
-	shell => /bin/bash'
+	shell => '/bin/bash'
 }
