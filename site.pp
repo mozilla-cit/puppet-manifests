@@ -1,9 +1,12 @@
 #Make sure sudoers is has the right owner/mode
-file { "/etc/sudoers":
-	owner => root, group => root, mode => 400
+file { '/etc/sudoers':
+  owner => 'root',
+  group => 'root',
+  mode  => '0400'
 }
+
 #Purge existing Puppet firewall rules
-resources { "firewall":
+resources { 'firewall':
   purge => true
 }
 
