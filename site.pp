@@ -1,5 +1,5 @@
 #Make sure sudoers is has the right owner/mode
-file { "/ect/sudoers":
+file { "/etc/sudoers":
 	owner => root, group => root, mode => 400
 }
 #Purge existing Puppet firewall rules
