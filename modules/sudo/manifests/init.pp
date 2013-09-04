@@ -1,4 +1,4 @@
-class base {
+class sudo {
 
   package { 'sudo':
     ensure => latest
@@ -9,14 +9,6 @@ class base {
     path    => '/etc/sudoers',
     require => Package['sudo'],
     source  => '/etc/sudoers'
-  }
-
-  package { 'zsh':
-    ensure => latest
-  }
-
-  package { 'tcsh':
-    ensure => latest
   }
 
 }
