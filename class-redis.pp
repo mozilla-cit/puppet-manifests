@@ -1,7 +1,7 @@
 class redis  {
 
-	package { "redis":
-		ensure	=>	latest
-	}
+  package { 'redis':
+    ensure  =>  latest
+  }
 
 }
