@@ -8,7 +8,7 @@ class ssh::config {
     owner   => root,
     group   => root,
     mode    => '0600',
-    source  => 'puppet://modules/ssh/sshd_config',
+    content => template('ssh/sshd_config.erb');
     require => Class['ssh::install'],
     notify  => Class['ssh::service'],
   }
