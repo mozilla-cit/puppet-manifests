@@ -39,17 +39,17 @@ class ssh::params {
   $ssh_permit_empty_pwd   = 'no'
   $ssh_challenge_resp     = 'no'
 
-  $ssh_kerb_auth          = false
-  $ssh_kerb_or_localpw    = false
-  $ssh_kerb_ticket_clean  = true
-  $ssh_kerb_get_afs       = false
-  $ssh_kerb_use_kuserok   = true
+  $ssh_kerb_auth          = 'no'
+  $ssh_kerb_or_localpw    = 'no'
+  $ssh_kerb_ticket_clean  = 'yes'
+  $ssh_kerb_get_afs       = 'no'
+  $ssh_kerb_use_kuserok   = 'yes'
   $ssh_gssapi_auth        = 'yes'
   $ssh_gssapi_cleanupcred = 'yes'
   $ssh_gssapi_strictacpt  = 'yes'
   $ssh_gssapi_key_exch    = 'no'
 
-  $ssh_use_pam            = true
+  $ssh_use_pam            = 'yes'
 
   $ssh_accept_env         = 'LANG LC_CTYPE LC_NUMERIC LC_TIME'
   $ssh_accept_env         +=' LC_COLLATE LC_MONETARY LC_MESSAGES'
@@ -57,26 +57,26 @@ class ssh::params {
   $ssh_accept_env         +=' LC_MEASUREMENT LC_IDENTIFICATION LC_ALL'
   $ssh_accept_env         +=' LANGUAGE XMODIFIERS'
 
-  $ssh_allow_agent_fwrd   = true
-  $ssh_allow_tcp_fwrd     = true
-  $ssh_gatewayports       = false
-  $ssh_X11_forward        = true
+  $ssh_allow_agent_fwrd   = 'yes'
+  $ssh_allow_tcp_fwrd     = 'yes'
+  $ssh_gatewayports       = 'no'
+  $ssh_X11_forward        = 'yes'
   $ssh_X11_displayoffset  = 10
-  $ssh_X11_uselocalhost   = true
-  $ssh_printmotd          = true
-  $ssh_print_lastlog      = true
-  $ssh_tcp_keepalive      = true
-  $ssh_use_login          = false
-  $ssh_use_priv_sep       = true
-  $ssh_permit_user_env    = false
+  $ssh_X11_uselocalhost   = 'yes'
+  $ssh_printmotd          = 'yes'
+  $ssh_print_lastlog      = 'yes'
+  $ssh_tcp_keepalive      = 'yes'
+  $ssh_use_login          = 'no'
+  $ssh_use_priv_sep       = 'yes'
+  $ssh_permit_user_env    = 'no'
   $ssh_compress           = 'delay'
   $ssh_client_alive_int   = 0
   $ssh_client_alive_cnt   = 3
-  $ssh_show_patch_lvl     = false
-  $ssh_use_dns            = true
+  $ssh_show_patch_lvl     = 'no'
+  $ssh_use_dns            = 'yes'
   $ssh_pid_file           = '/var/run/sshd.pid'
   $ssh_max_startups       = 10
-  $ssh_permit_tunnel      = false
+  $ssh_permit_tunnel      = 'no'
   $ssh_chroot_dir         = 'none'
 
   $ssh_banner             = 'none'
