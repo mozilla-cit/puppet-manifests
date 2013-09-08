@@ -1,41 +1,29 @@
-#	$OpenBSD: sshd_config,v 1.80 2008/07/02 02:24:18 djm Exp $
+Port <%= @ssh_port %> 
+AddressFamily <%= @ssh_addr_family %> 
+ListenAddress <%= @ssh_listen_addr %> 
 
-# This is the sshd server system-wide configuration file.  See
-# sshd_config(5) for more information.
+Protocol <%= @ssh_protocol %> 
 
-# This sshd was compiled with PATH=/usr/local/bin:/bin:/usr/bin
+HostKey <%= @ssh_hostkey %> 
 
-# The strategy used for options in the default sshd_config shipped with
-# OpenSSH is to specify options with their default value where
-# possible, but leave them commented.  Uncommented options change a
-# default value.
+SyslogFacility <%= @ssh_syslog_facility %> 
+LogLevel <%= @ssh_syslog_level %> 
 
-Port <%= ssh_port %> 
-AddressFamily <%= ssh_addr_family %> 
-ListenAddress <%= ssh_listen_addr %> 
-
-Protocol <%= ssh_protocol %> 
-
-HostKey <%= ssh_hostkey %> 
-
-SyslogFacility <%= ssh_syslog_facility %> 
-LogLevel <%= ssh_syslog_level %> 
-
-RSAAuthentication <%= ssh_rsa_auth %>
-PubkeyAuthentication <%= ssh_pubkey_auth %>
-AuthorizedKeysFile <%= ssh_auth_keysfile %>
+RSAAuthentication <%= @ssh_rsa_auth %>
+PubkeyAuthentication <%= @ssh_pubkey_auth %>
+AuthorizedKeysFile <%= @ssh_auth_keysfile %>
 
 # To disable tunneled clear text passwords, change to no here!
 #PermitEmptyPasswords no
-PasswordAuthentication <%= ssh_pwd_auth %> 
-PermitEmptyPasswords <%= ssh_permit_empty_pwd %>
+PasswordAuthentication <%= @ssh_pwd_auth %> 
+PermitEmptyPasswords <%= @ssh_permit_empty_pwd %>
 
-ChallengeResponseAuthentication <%= ssh_challenge_resp %> 
+ChallengeResponseAuthentication <%= @ssh_challenge_resp %> 
 
-GSSAPIAuthentication <%= ssh_gssapi_auth %> 
-GSSAPICleanupCredentials <%= ssh_gssapi_cleanupcred %> 
+GSSAPIAuthentication <%= @ssh_gssapi_auth %> 
+GSSAPICleanupCredentials <%= @ssh_gssapi_cleanupcred %> 
 
-UsePAM <%= ssh_use_pam %> 
+UsePAM <%= @ssh_use_pam %> 
 
-AcceptEnv <%= ssh_accept_env %>
+AcceptEnv <%= @ssh_accept_env %>
 
