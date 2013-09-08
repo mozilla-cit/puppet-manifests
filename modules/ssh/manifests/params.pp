@@ -1,7 +1,8 @@
-#################################################
-# SSHD params pp file
-#################################################
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 class ssh::params {
+  content           => template('ssh/sshd_config.erb')
   $ssh_package_name = 'openssh-server'
   $ssh_service_conf = '/etc/ssh/sshd_config'
   $ssh_service_name = 'ssh'
@@ -23,28 +24,28 @@ class ssh::params {
   $ssh_strict_mode        = 'yes'
   $ssh_max_auth_tries     = 6
 
-  $ssh_rsa_auth           = 'yes' 
-  $ssh_pubkey_auth        = 'yes' 
+  $ssh_rsa_auth           = 'yes'
+  $ssh_pubkey_auth        = 'yes'
   $ssh_auth_keysfile      = '.ssh/authorized_keys'
   $ssh_auth_keyscmd       = 'none'
   $ssh_auth_keyscmdrunas  = 'nobody'
 
-  $ssh_rhosts_rsa_auth    = 'no' 
-  $ssh_hostbased_auth     = 'no' 
+  $ssh_rhosts_rsa_auth    = 'no'
+  $ssh_hostbased_auth     = 'no'
 
-  $ssh_ignoreusrknown     = 'no' 
-  $ssh_ignorerhosts       = 'yes' 
-  $ssh_pwd_auth           = 'no' 
-  $ssh_permit_empty_pwd   = 'no' 
-  $ssh_challenge_resp     = 'no' 
+  $ssh_ignoreusrknown     = 'no'
+  $ssh_ignorerhosts       = 'yes'
+  $ssh_pwd_auth           = 'no'
+  $ssh_permit_empty_pwd   = 'no'
+  $ssh_challenge_resp     = 'no'
 
   $ssh_kerb_auth          = false
   $ssh_kerb_or_localpw    = false
   $ssh_kerb_ticket_clean  = true
   $ssh_kerb_get_afs       = false
   $ssh_kerb_use_kuserok   = true
-  $ssh_gssapi_auth        = 'yes' 
-  $ssh_gssapi_cleanupcred = 'yes' 
+  $ssh_gssapi_auth        = 'yes'
+  $ssh_gssapi_cleanupcred = 'yes'
   $ssh_gssapi_strictacpt  = 'yes'
   $ssh_gssapi_key_exch    = 'no'
 
