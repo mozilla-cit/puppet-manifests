@@ -1,0 +1,29 @@
+Port <%= @ssh_port %> 
+AddressFamily <%= @ssh_addr_family %> 
+ListenAddress <%= @ssh_listen_addr %> 
+
+Protocol <%= @ssh_protocol %> 
+
+HostKey <%= @ssh_hostkey %> 
+
+SyslogFacility <%= @ssh_syslog_facility %> 
+LogLevel <%= @ssh_syslog_level %> 
+
+RSAAuthentication <%= @ssh_rsa_auth %>
+PubkeyAuthentication <%= @ssh_pubkey_auth %>
+AuthorizedKeysFile <%= @ssh_auth_keysfile %>
+
+# To disable tunneled clear text passwords, change to no here!
+#PermitEmptyPasswords no
+PasswordAuthentication <%= @ssh_pwd_auth %> 
+PermitEmptyPasswords <%= @ssh_permit_empty_pwd %>
+
+ChallengeResponseAuthentication <%= @ssh_challenge_resp %> 
+
+GSSAPIAuthentication <%= @ssh_gssapi_auth %> 
+GSSAPICleanupCredentials <%= @ssh_gssapi_cleanupcred %> 
+
+UsePAM <%= @ssh_use_pam %> 
+
+AcceptEnv <%= @ssh_accept_env %>
+
