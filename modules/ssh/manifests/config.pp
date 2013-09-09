@@ -10,6 +10,7 @@ class ssh::config {
     owner   => root,
     group   => root,
     mode    => '0600',
+    content => template('ssh/sshd_config.erb'),
     require => Class['ssh::install'],
     notify  => Class['ssh::service'],
   }
