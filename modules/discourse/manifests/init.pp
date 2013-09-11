@@ -1,3 +1,4 @@
+#Set up dependencies for Discourse
 class discourse {
   include base
   include nginx
