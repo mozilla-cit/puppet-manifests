@@ -11,6 +11,19 @@ class { 'postgresql::server':
 
 
 
+postgresql::db{ 'discourse_dev':
+  user          => 'discourse_dev_user',
+  password      => 'weNeedAPasswordHere',
+  grant         => 'all',
+}
+
+postgresql::db{ 'discourse_stage':
+  user          => 'discourse_stage_user',
+  password      => 'weNeedAPasswordHere',
+  grant         => 'all',
+}
+
+
 postgresql::db{ 'discourse_prod':
   user          => 'discourse_prod_user',
   password      => 'weNeedAPasswordHere',
