@@ -1,6 +1,6 @@
 class { 'postgresql::server':
   config_hash => {
-      'ip_mask_allow_all_users' => '0.0.0.0/0',
+      'ip_mask_allow_all_users' => '10.6.0.0/15',
       'listen_addresses'        => '*',
       'manage_redhat_firewall'  => false,
 
