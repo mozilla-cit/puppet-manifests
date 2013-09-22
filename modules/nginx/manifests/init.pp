@@ -12,7 +12,7 @@ class nginx  {
 
   file { 'discourse.conf':
     ensure  => file,
-    path    => '/etc/nginx/conf.d/',
+    path    => '/etc/nginx/conf.d/discourse.conf',
     require => Package['nginx'],
     source  => 'puppet:///modules/nginx/resources/discourse.conf'
   }
