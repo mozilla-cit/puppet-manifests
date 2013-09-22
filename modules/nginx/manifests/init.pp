@@ -10,11 +10,11 @@ class nginx  {
     ensure => latest
   }
 
-  file { 'nginx.conf':
+  file { 'discourse.conf':
     ensure  => file,
-    path    => '/etc/nginx/nginx.conf',
+    path    => '/etc/nginx/conf.d/',
     require => Package['nginx'],
-    source  => '/root/puppet-manifests/resource/nginx.conf'
+    source  => 'puppet:///modules/nginx/resources/discourse.conf'
   }
   service { 'nginx':
     ensure    => running,
