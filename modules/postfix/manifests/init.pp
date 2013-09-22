@@ -10,7 +10,7 @@ class { 'postfix':
     'smtp_sasl_password_maps = hash:/etc/postfix/sasl/passwd',
     'smtp_sasl_security_options = noanonymous',
     'smtp_use_tls = yes',
-    'relayhost = [smtp.mandrillapp.com'],
+    'relayhost = [smtp.mandrillapp.com]'],
     ensure => 'present'
   }
 }
