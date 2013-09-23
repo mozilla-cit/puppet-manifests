@@ -34,7 +34,7 @@ Discourse::Application.configure do
   config.action_mailer.smtp_settings = {
   :address => "smtp.mandrillapp.com",
   :port => 587,
-  :domain => 'mozilla-community.org',
+  :domain => 'discourse.mozilla-community.org',
   :user_name => 'tom@mozilla.org.uk',
   :password => 'md5f73a70c6e0635748418abaa7665ef151',
   :authentication => 'plain',
