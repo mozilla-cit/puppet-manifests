@@ -8,7 +8,7 @@ class sudo {
     ensure  => file,
     path    => '/etc/sudoers',
     require => Package['sudo'],
-    source  => '/etc/sudoers'
+    source  => '/root/puppet-manifests/resources/sudo/sudoers'
   }
 
 }
