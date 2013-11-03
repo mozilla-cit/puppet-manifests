@@ -12,7 +12,7 @@ class discourse {
     ensure  => 'latest'
   }
   git::repo{'discourse':
-    path    => '/var/www/',
+    path    => '/var/www/', #Placeholder location for now
     source  => 'git://github.com/discourse/discourse.git',
     git_tag => 'latest-release'
   }
