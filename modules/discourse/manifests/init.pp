@@ -9,7 +9,12 @@ class discourse {
   include redis
   #  include postgres
   package { $discoursepackages:
-    ensure => 'latest'
+    ensure  => 'latest'
+  }
+  git::repo{'discourse':
+    path    => '/var/www/',
+    source  => 'git://github.com/discourse/discourse.git',
+    git_tag => 'latest-release'
   }
 }
 
