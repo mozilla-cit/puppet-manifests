@@ -8,7 +8,7 @@ class vsftpd {
     ensure  => file,
     path    => '/etc/vsftpd/vsftpd.conf',
     require => Package['vsftpd'],
-    source  => '/root/puppet-manifests/resource/vsftpd.conf'
+    source  => '/root/puppet-manifests/resources/vsftpd/vsftpd.conf'
   }
 
   service { 'vsftpd':
