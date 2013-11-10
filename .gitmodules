@@ -13,3 +13,6 @@
 [submodule "modules/firewall"]
 	path = modules/firewall
 	url = https://github.com/puppetlabs/puppetlabs-firewall
+[submodule "modules/rvm"]
+	path = modules/rvm
+	url = https://github.com/maestrodev/puppet-rvm
