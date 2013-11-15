@@ -6,7 +6,9 @@ class discourse {
   'imagemagick', 'python-software-properties' ]
   #  include postgres
   package { $discoursepackages:
-    ensure => 'latest'
+    path    => '/var/www/',
+    source  => 'git://github.com/discourse/discourse.git',
+    git_tag => 'latest-release'
   }
 }
 
