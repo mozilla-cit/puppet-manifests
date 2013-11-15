@@ -1,16 +1,15 @@
 node default {
-	include base
-	include users
+  include base
+  include users
 }
 node webservers inherits default {
-	include nginx
-	include redis
+  include nginx
+  include redis
 }
 
 node database inherits default {
-	include postgresql
-
-	class { 'postgresql::server':
+  include postgresql
+  class { 'postgresql::server':
   config_hash => {
       'ip_mask_allow_all_users' => '10.6.0.0/15',
       'listen_addresses'        => '*',
