@@ -7,6 +7,12 @@ node webservers inherits default {
 	include redis
 }
 
+node discourse inherits default {
+  include nginx
+  include redis
+  include discourse
+}
+
 node database inherits default {
 	include postgresql
 
