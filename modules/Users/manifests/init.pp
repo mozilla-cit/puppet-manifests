@@ -1,7 +1,3 @@
-# Available variables:
-# $uid,$realname,$pass,$sshkeytype,$sshkey,$shell,$locked
-
-
 @accounts::virtual { 'ubuntu':
 uid => 1000,
 realname => 'Ubuntu',
