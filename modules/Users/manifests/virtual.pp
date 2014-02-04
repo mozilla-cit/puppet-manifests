@@ -1,6 +1,4 @@
-# Modification of http://blog.scottlowe.org/2012/11/25/using-puppet-for-account-management/
-# Allows creation of users
-define accounts::virtual ($uid,$realname,$pass,$sshkeytype,$sshkey,$shell) {
+define accounts::virtual ($uid,$realname,$pass,$sshkeytype,$sshkey,$shell,$locked) {
 include accounts::params
  
 # Pull in values from accounts::params
@@ -18,6 +16,7 @@ comment => $realname,
 password => $pass,
 managehome => true,
 require => Group[$title],
+locked => $locked,
 }
  
 # Create a matching group
