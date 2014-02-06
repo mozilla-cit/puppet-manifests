@@ -1,4 +1,4 @@
-define accounts::virtual ($uid,$realname,$pass,$sshkeytype,$sshkey,$shell,$locked) {
+class accounts::virtual ($uid,$realname,$pass,$sshkeytype,$sshkey,$shell,$locked) {
 include accounts::params
  
 # Pull in values from accounts::params
