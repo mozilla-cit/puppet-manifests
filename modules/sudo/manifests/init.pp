@@ -71,7 +71,7 @@ class sudo(
   $source = $sudo::params::source
 ) inherits sudo::params {
    class { 'sudo::allow':
-     add_users  => ['jsmith'],
+     add_users  => [],
      add_groups => ['sudo'],
    }
   validate_bool($enable)
