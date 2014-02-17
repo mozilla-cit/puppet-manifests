@@ -70,8 +70,10 @@ class sudo(
   $config_dir = $sudo::params::config_dir,
   $source = $sudo::params::source
 ) inherits sudo::params {
-
-
+   class { 'sudo::allow':
+     add_users  => ['jsmith'],
+     add_groups => ['sudo'],
+   }
   validate_bool($enable)
   case $enable {
     true: {
