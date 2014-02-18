@@ -1,5 +1,5 @@
 node 'csa-bastion2' {
   include ::sudo
-  include accounts
+  include Accounts
   Accounts::Account <| title == 'test' |>
 }
