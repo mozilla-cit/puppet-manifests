@@ -1,4 +1,4 @@
-class 'base' {
+class base {
   include runstages
   class { 'users': stage => prep }
   include sudo
