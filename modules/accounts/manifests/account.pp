@@ -38,6 +38,7 @@
 # [Remember: No empty lines between comments and class definition]
 define accounts::account(
   $title='test',
+  $name='something',
   $ensure=present,
   $comment=undef,
   $uid=undef,
