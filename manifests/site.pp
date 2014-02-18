@@ -1,5 +1,10 @@
-node 'csa-bastion2' {
-  include ::sudo
+class 'base' {
+  include runstages
   include users
-  realize Users::Account['tad']
+  include sudo
+}
+
+
+node 'csa-bastion2' {
+	class { 'base' }
 }
