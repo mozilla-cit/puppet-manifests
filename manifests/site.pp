@@ -6,6 +6,6 @@ class base {
 
 
 node 'csa-bastion2' {
-	include base
+	class { 'base': production => $production }
 	realize Users::Account['tad']
 }
