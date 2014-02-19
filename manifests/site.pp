@@ -1,5 +1,5 @@
 class base {
-  include runstages
+  class { 'runstages': stage => prep }
   include users
   include sudo
 }
