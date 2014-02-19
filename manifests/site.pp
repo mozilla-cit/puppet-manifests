@@ -6,7 +6,6 @@ class base {
 
 
 node 'csa-bastion2' {
-	include runstages
 	class { 'base': stage => prep }
 	realize Users::Account['tad']
 }
