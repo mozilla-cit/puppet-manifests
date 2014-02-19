@@ -1,7 +1,7 @@
 class users {
   include users::list
 
-  define account ($group, $fullname, $ingroups, $authorizedkey, $keycomment) {
+  define account ($group, $fullname, $ingroups, $authorizedkey, $keycomment, $password) {
     Group["$name"] -> User["$name"] -> Exec["$name homedir"] ->
       Ssh_authorized_key["$keycomment"]
 
@@ -18,6 +18,7 @@ class users {
       shell      => "/bin/bash",
       home       => "/home/$name",
       require    => Group[$group],
+      password   => '$password',
     }
 
     exec { "$name homedir":
