@@ -5,7 +5,7 @@ class base {
 }
 
 
-node 'ubuntu-12' {
+node 'csa-bastion2' {
 	include base
 	realize Users::Account['tad']
 }
