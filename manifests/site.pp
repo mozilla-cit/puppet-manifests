@@ -1,4 +1,5 @@
 class base {
+  include stdlib
   include runstages
   include users
   include sudo
@@ -6,6 +7,6 @@ class base {
 
 
 node 'csa-bastion2' {
-	include base
+	class { 'base' : stage => prep }
 	realize Users::Account['tad']
 }
