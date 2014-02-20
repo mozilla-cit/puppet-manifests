@@ -20,5 +20,4 @@ class users::list {
   #  authorizedkey => '',
   #  keycomment => '',
   #}
-
   }
