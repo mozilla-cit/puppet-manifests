@@ -2,6 +2,7 @@ include runstages
 class base {
 	include stdlib
 	include users
+	include motd
 	realize Users::Account['tad']
 	realize Users::Account['will']
 }
