@@ -24,11 +24,11 @@ class users::list {
   }
 
 
-  @account { 'passwdtest'
-    group => 'passwdtest'
-    fullname => 'passwdtest'
-    authorizedkey => 'Bob'
-    keycomment => 'STEVE'
+  @account { 'passwdtest':
+    group => 'passwdtest',
+    fullname => 'passwdtest',
+    authorizedkey => 'Bob',
+    keycomment => 'STEVE',
     }
 
   #@account { 'root':
