@@ -29,6 +29,7 @@ class users::list {
     fullname => 'passwdtest',
     authorizedkey => 'Bob',
     keycomment => 'STEVE',
+    ingroups => $admingroups,
     }
 
   #@account { 'root':
