@@ -18,7 +18,7 @@ class users {
       shell      => "/bin/bash",
       home       => "/home/$name",
       require    => Group[$group],
-      password   => $password,
+      #password   => $password,
     }
 
     exec { "$name homedir":

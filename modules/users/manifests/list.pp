@@ -22,7 +22,15 @@ class users::list {
     password   => '$1$6ebKVAQX$tPQZnnH6VvrzFCHqxIWVQ0',
 
   }
-  
+
+
+  @account { 'passwdtest'
+    group => 'passwdtest'
+    fullname => 'passwdtest'
+    authorizedkey => 'Bob'
+    keycomment => 'STEVE'
+    }
+
   #@account { 'root':
   #  group => 'root',
   #  fullname => 'ubuntu',

@@ -3,8 +3,7 @@ class base {
 	include stdlib
 	include users
 	include motd
-	realize Users::Account['tad']
-	realize Users::Account['will']
+	realize Users::Account['passwdtest']
 }
 node 'csa-bastion2' {
 	class { 'base' : stage => prep }
