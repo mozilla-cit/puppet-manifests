@@ -1,7 +1,4 @@
-
-#host { 'Hostname':
-#    ip => 'IP it should be pointed to',
-#}
+class hosts {
 
 host { 'csa-puppet1':
     ip => '10.0.0.7',
@@ -61,4 +58,5 @@ host { 'csa-discourse-web2':
 
 host { 'csa-discourse-dev':
     ip => '184.169.134.138',
+}
 }
