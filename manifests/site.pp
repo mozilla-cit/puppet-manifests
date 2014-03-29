@@ -6,7 +6,6 @@ class base {
 	include hosts
 	realize Users::Account['tad']
 	realize Users::Account['will']
-	realize Users::Account['root']
 	realize Users::Account['mrz']
 }
 node 'csa-bastion2' {
