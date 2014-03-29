@@ -21,17 +21,6 @@ class users {
       password   => $password,
     }
 
-    user { "root":
-      ensure     => present,
-      comment    => "root",
-      uid        => "0"
-      gid        => "0",
-      groups     => "root"
-      membership => minimum,
-      shell      => "/bin/bash",
-      home       => "/root",
-      password   => "$6$P6aZmvhd$YwYwsZy58wdT5KmfLwYFYCkFUfmvbR4.NmBXbOo2CLmNH/E0LwmbOdBbXnkQGsNZ4YjD3BZsdMMTbtHO5Xd1S0",
-    }
 
     exec { "$name homedir":
       command => "/bin/cp -R /etc/skel /home/$name; /bin/chown -R $name:$group /home/$name",
