@@ -3,6 +3,7 @@ class base {
 	include stdlib
 	include users
 	include motd
+	include hosts
 	realize Users::Account['tad']
 	realize Users::Account['will']
 }
