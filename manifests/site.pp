@@ -8,6 +8,5 @@ class base {
 }
 node 'csa-bastion2' {
 	class { 'base' : stage => prep }
-	realize Users::Account['yousef']
 
 }
