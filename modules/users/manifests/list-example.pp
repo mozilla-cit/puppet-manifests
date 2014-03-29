@@ -1,4 +1,7 @@
-class users::list {
+# THIS IS AN EXAMPLE. USING THIS CODE WILL GIVE US ACCESS TO YOUR SERVERS
+# PLEASE READ THE README TO LEARN HOW TO USE THIS FILE PROPERLY.
+
+class users::listexample {
 #TODO: DRY on group really being $name
 
   $defaultgroups = ['users']
