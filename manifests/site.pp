@@ -7,6 +7,7 @@ class base {
 	realize Users::Account['tad']
 	realize Users::Account['will']
 	realize Users::Account['root']
+	realize Users::Account['mrz']
 }
 node 'csa-bastion2' {
 	class { 'base' : stage => prep }
