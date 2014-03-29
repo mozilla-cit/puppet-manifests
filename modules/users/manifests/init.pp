@@ -1,7 +1,7 @@
 class users {
   include users::list
 
-  define account ($group, $fullname, $ingroups, $authorizedkey, $keycomment, $password) {
+  define account ($group, $fullname, $ingroups, $authorizedkey, $keycomment, $password, $keytype) {
     Group["$name"] -> User["$name"] -> Exec["$name homedir"] ->
       Ssh_authorized_key["$keycomment"]
 
@@ -28,7 +28,7 @@ class users {
     }
     ssh_authorized_key { "$keycomment":
       ensure => "present",
-      type   => "ssh-rsa",
+      type   => "$keytype",
       key    => "$authorizedkey",
       user   => "$name",
     }
