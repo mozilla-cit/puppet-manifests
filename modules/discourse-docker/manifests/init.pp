@@ -21,7 +21,7 @@ class discourse-docker {
     mode   => 0400,
     owner  => 'root',
     group  => 'docker',
-    link   => 'follow'
+    links   => 'follow'
   }
 
 # Bootstrap app
