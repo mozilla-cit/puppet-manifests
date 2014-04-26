@@ -17,7 +17,7 @@ node 'csa-bastion1' {
 node 'csa-bastion2' {
 	class { 'base' : stage => prep }
 	class { 'monitoring-agent' : stage => prep }
-	class { 'monitoring-agent::config' : stage => prep }
+	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker' : stage => prep }
 
 }
