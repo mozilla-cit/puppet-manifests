@@ -6,7 +6,7 @@
 class { 'discourse-docker':
   #Set up run stages
   stage { 'first':
-    before => stage['main'],
+    before => Stage['main'],
     }
   stage { 'last' : }
   Stage['main'] -> Stage['last']
