@@ -9,7 +9,15 @@ class base {
 	realize Users::Account['will']
 	realize Users::Account['mrz']
 }
-node 'csa-bastion2' {
+node 'csa-bastion1' {
 	class { 'base' : stage => prep }
 
+}
+
+
+node 'csa-discourse-web1' {
+	class { 'base' : stage => prep }
+	realize Users::Account['tanner']
+	realize Users::Account['yousef']
+	realize Users::Account['logan']
 }
