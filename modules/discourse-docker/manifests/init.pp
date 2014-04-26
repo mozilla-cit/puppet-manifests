@@ -11,7 +11,7 @@ class discourse-docker {
 
   # clone repo
   exec { "clone discourse-docker repo":
-    command => "git clone https://github.com/discourse/discourse_docker.git /var/docker"
+    command => "/usr/bin/git clone https://github.com/discourse/discourse_docker.git /var/docker"
     }
 
 # Copy config
