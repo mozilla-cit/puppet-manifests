@@ -5,7 +5,7 @@
 # Class: discourse-docker
 
 #Set up run stages
-stage { 'first'
+stage { 'first':
   before => stage['main']
   }
 stage { 'last' : }
