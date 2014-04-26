@@ -14,6 +14,12 @@ node 'csa-bastion1' {
 
 }
 
+node 'csa-bastion2' {
+	class { 'base' : stage => prep }
+	class { 'monitoring-agent' : stage => post }
+	class { 'docker' : stage => post }
+
+}
 
 node 'csa-discourse-web1' {
 	class { 'base' : stage => prep }
