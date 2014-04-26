@@ -16,11 +16,12 @@ class discourse-docker {
 
 # Copy config
   file { "Docker config":
-    source => '/mnt/app.yml',
+    source => 'puppet:///modules/discourse-dockerapp.yml',
     path   => '/var/docker/containers/app.yml',
     mode   => 0400,
     owner  => 'root',
-    group  => 'docker'
+    group  => 'docker',
+    link   => 'follow'
   }
 
 # Bootstrap app
