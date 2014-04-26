@@ -11,6 +11,7 @@ class base {
 }
 node 'csa-bastion1' {
 	class { 'base' : stage => prep }
+	class { 'hosts::local' : stage => prep }
 
 }
 
@@ -21,6 +22,7 @@ node 'csa-bastion2' {
 
 node 'csa-discourse-web1' {
 	class { 'base' : stage => prep }
+	class { 'hosts::external' : stage => prep }
 	class { 'monitoring-agent' : stage => prep }
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker' : stage => prep }
@@ -31,6 +33,7 @@ node 'csa-discourse-web1' {
 
 node 'csa-discourse-web2' {
 	class { 'base' : stage => prep }
+	class { 'hosts::external' : stage => prep }
 	class { 'monitoring-agent' : stage => prep }
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker' : stage => prep }
@@ -42,6 +45,7 @@ node 'csa-discourse-web2' {
 node 'csa-wpmu-web1' {
 	class { 'base' : stage => prep }
 	class { 'monitoring-agent' : stage => prep }
+	class { 'hosts::local' : stage => prep }
 	realize Users::Account['logan']
 }
 
@@ -49,4 +53,5 @@ node 'csa-wpmu-web2' {
 	class { 'base' : stage => prep }
 	class { 'monitoring-agent' : stage => prep }
 	realize Users::Account['logan']
+	class { 'hosts::local' : stage => prep }
 }
