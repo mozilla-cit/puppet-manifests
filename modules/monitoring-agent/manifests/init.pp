@@ -25,5 +25,5 @@ class monitoring-agent {
 		ensure => installed,
 	}
 
-	include monitoring-agent::config,
+	include 'monitoring-agent::config'
 }
