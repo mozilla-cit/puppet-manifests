@@ -21,22 +21,24 @@ node 'csa-bastion2' {
 }
 
 node 'csa-discourse-web1' {
-	class { 'base' : stage => prep }
-	class { 'hosts::external' : stage => prep }
-	class { 'monitoring-agent' : stage => prep }
+	class { 'base' : stage                     => prep }
+	class { 'hosts::external' : stage          => prep }
+	class { 'monitoring-agent' : stage         => prep }
 	class { 'monitoring-agent::config' : stage => post }
-	class { 'docker' : stage => prep }
+	class { 'docker' : stage                   => prep }
+    class { 'discourse-docker' : stage       => prep }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
 	realize Users::Account['logan']
 }
 
 node 'csa-discourse-web2' {
-	class { 'base' : stage => prep }
-	class { 'hosts::external' : stage => prep }
-	class { 'monitoring-agent' : stage => prep }
+	class { 'base' : stage                     => prep }
+	class { 'hosts::external' : stage          => prep }
+	class { 'monitoring-agent' : stage         => prep }
 	class { 'monitoring-agent::config' : stage => post }
-	class { 'docker' : stage => prep }
+	class { 'docker' : stage                   => prep }
+    class { 'discourse-docker" " stage      => prep }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
 	realize Users::Account['logan']
