@@ -38,7 +38,7 @@ node 'csa-discourse-web2' {
 	class { 'monitoring-agent' : stage         => prep }
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker' : stage                   => prep }
-    class { 'discourse-docker" " stage      => prep }
+    class { 'discourse-docker" : stage      => prep }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
 	realize Users::Account['logan']
