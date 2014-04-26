@@ -11,4 +11,5 @@ class monitoring-agent::config {
     	notify  => Service["xinetd"],
 	}
 
+
 }
