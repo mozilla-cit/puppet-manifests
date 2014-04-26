@@ -16,7 +16,7 @@ class discourse-docker {
 
 # Copy config
   file { "Docker config":
-    source => 'puppet:///modules/discourse-dockerapp.yml',
+    source => 'puppet:///modules/discourse-docker/app.yml',
     path   => '/var/docker/containers/app.yml',
     mode   => 0400,
     owner  => 'root',
