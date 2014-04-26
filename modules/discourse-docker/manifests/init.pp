@@ -7,9 +7,10 @@ class { 'discourse-docker':
   #Set up run stages
   stage { 'first':
     before => Stage['main'],
-    }
-  stage { 'last' : }
+  }
+  stage { 'last': }
   Stage['main'] -> Stage['last']
+
 
     # Ensure git is installed
     package { "git":
