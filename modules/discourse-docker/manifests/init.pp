@@ -13,19 +13,19 @@ Stage['main'] -> Stage['last']
 
   # Ensure git is installed
   package { "git"
-    stage  => 'first',
+    stage  => first,
     ensure => installed,
   }
 
 # clone repo
 exec { "clone discourse-docker repo":
-  stage   => 'first',
+  stage   => first,
   command => "git clone https://github.com/discourse/discourse_docker.git /var/docker"
   }
 
 # Copy config
 file { "Docker config":
-  stage  => 'first',
+  stage  => first,
   source => 'puppet:///modules/discourse-docker/files/app.yml',
   path   => '/var/docker/containers/app.yml',
   mode   => 0400,
