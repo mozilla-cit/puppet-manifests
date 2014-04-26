@@ -6,7 +6,7 @@
 class { 'discourse-docker':
   #Set up run stages
   stage { 'first':
-    before => stage['main']
+    before => stage['main'],
     }
   stage { 'last' : }
   Stage['main'] -> Stage['last']
@@ -35,11 +35,13 @@ class { 'discourse-docker':
 
 # Bootstrap app
   exec { "bootstrap Discourse":
+    stage   => main,
     command => '/var/docker/discourse_docker/launcher bootstrap app'
   }
 
 # Start app
   exec { "start Discourse":
+    stage   => last,
     command => '/var/docker/discourse_docker/launcher start app'
   }
 }
