@@ -21,7 +21,7 @@ class monitoring-agent {
 	}
 
 	# Install check_mk agent
-	package { "check-mk-agent ":
+	package { "check-mk-agent":
 		ensure => installed,
 	}
 }
