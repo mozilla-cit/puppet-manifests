@@ -25,11 +25,11 @@ class discourse-docker {
 
 # Bootstrap app
   exec { "bootstrap Discourse":
-    command => '/var/docker/discourse_docker/launcher bootstrap app'
+    command => '/var/docker/launcher bootstrap app'
   }
 
 # Start app
   exec { "start Discourse":
-    command => '/var/docker/discourse_docker/launcher start app'
+    command => '/var/docker/launcher start app'
   }
 }
