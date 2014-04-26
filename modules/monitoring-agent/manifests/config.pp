@@ -8,7 +8,6 @@ class monitoring-agent::config {
     	owner => root,
     	group => root,
     	source => "puppet:///modules/monitoring-agent/check_mk",
-    	notify  => Service["xinetd"],
 	}
 
 
