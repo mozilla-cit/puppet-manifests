@@ -1,9 +1,5 @@
 class hosts {
 
-host { 'csa-puppet1':
-    ip => '10.0.0.7',
-    host_aliases => 'puppet',
-}
 
 host { 'csa-bastion1':
     ip => '10.0.0.6',
@@ -58,5 +54,25 @@ host { 'csa-discourse-web2':
 
 host { 'csa-discourse-dev':
     ip => '50.18.122.184',
+}
+}
+
+# Class: hosts::local
+#
+#
+class hosts::local {
+    host { 'csa-puppet1':
+    ip => '10.0.0.7',
+    host_aliases => 'puppet',
+}
+}
+
+# Class: hosts::external
+#
+#
+class hosts::external {
+    host { 'csa-puppet1':
+    ip => '15.125.78.134',
+    host_aliases => 'puppet',
 }
 }
