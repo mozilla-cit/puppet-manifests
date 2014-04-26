@@ -14,7 +14,6 @@ class discourse-docker {
 
     # Ensure git is installed
     package { "git":
-      stage  => first,
       ensure => installed,
     }
 
