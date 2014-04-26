@@ -49,14 +49,14 @@ host { 'csa-wpmu-proxy1':
 }
 
 host { 'csa-discourse-web1':
-    ip => '184.169.148.85',
+    ip => '50.18.123.112',
 }
 
 host { 'csa-discourse-web2':
-    ip => '184.169.160.221',
+    ip => '50.18.123.114',
 }
 
 host { 'csa-discourse-dev':
-    ip => '184.169.134.138',
+    ip => '50.18.122.184',
 }
 }
