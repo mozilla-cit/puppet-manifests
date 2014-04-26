@@ -43,3 +43,8 @@ node 'csa-wpmu-web1' {
 	class { 'base' : stage => prep }
 	class { 'monitoring-agent' : stage => prep }
 }
+
+node 'csa-wpmu-web2' {
+	class { 'base' : stage => prep }
+	class { 'monitoring-agent' : stage => prep }
+}
