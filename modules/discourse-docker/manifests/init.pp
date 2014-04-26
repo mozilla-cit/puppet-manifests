@@ -12,7 +12,7 @@ stage { 'last' : }
 Stage['main'] -> Stage['last']
 
   # Ensure git is installed
-  package { "git"
+  package { "git":
     stage  => first,
     ensure => installed,
   }
