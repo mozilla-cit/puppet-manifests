@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Class: discourse-docker
-class { 'discourse-docker':
+class 'discourse-docker' {
   #Set up run stages
   stage { 'first':
     before => Stage['main'],
