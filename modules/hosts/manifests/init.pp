@@ -44,11 +44,11 @@ host { 'csa-wpmu-proxy1':
     ip => '10.0.0.23',
 }
 
-host { 'csa-discourse-web1':
+host { 'csa-discourse-web2':
     ip => '50.18.123.112',
 }
 
-host { 'csa-discourse-web2':
+host { 'csa-discourse-web1':
     ip => '50.18.123.114',
 }
 
