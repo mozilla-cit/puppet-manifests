@@ -45,7 +45,7 @@ host { 'csa-wpmu-proxy1':
 }
 
 host { 'csa-discourse-web2':
-    ip => '50.18.123.112',
+    ip => '50.18.123.122',
 }
 
 host { 'csa-discourse-web1':
