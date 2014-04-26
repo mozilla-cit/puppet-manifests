@@ -15,16 +15,31 @@ node 'csa-bastion1' {
 }
 
 node 'csa-bastion2' {
-	class { 'base' : stage => prep }
-	class { 'monitoring-agent' : stage => prep }
-	class { 'monitoring-agent::config' : stage => post }
-	class { 'docker' : stage => prep }
+
 
 }
 
 node 'csa-discourse-web1' {
 	class { 'base' : stage => prep }
+	class { 'monitoring-agent' : stage => prep }
+	class { 'monitoring-agent::config' : stage => post }
+	class { 'docker' : stage => prep }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
 	realize Users::Account['logan']
+}
+
+node 'csa-discourse-web2' {
+	class { 'base' : stage => prep }
+	class { 'monitoring-agent' : stage => prep }
+	class { 'monitoring-agent::config' : stage => post }
+	class { 'docker' : stage => prep }
+	realize Users::Account['tanner']
+	realize Users::Account['yousef']
+	realize Users::Account['logan']
+}
+
+node 'csa-wpmu-web1' {
+	class { 'base' : stage => prep }
+	class { 'monitoring-agent' : stage => prep }
 }
