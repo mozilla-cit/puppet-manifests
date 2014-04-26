@@ -22,7 +22,6 @@ class discourse-docker {
     owner  => 'root',
     group  => 'docker',
     links  => 'follow',
-    ensure => 'exists'
   }
 
 # Bootstrap app
