@@ -30,10 +30,10 @@
 # NeSI git module
 #
 # Somewhat derived from https://github.com/theforeman/puppet-git
-class git {
+class git(
   $gui = false,
-  $svn = false,
-{
+  $svn = false
+){
   case $::operatingsystem  {
     RedHat,CentOS,Ubuntu, Debian,Amazon:{
       class{'git::install':
