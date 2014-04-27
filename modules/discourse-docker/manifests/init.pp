@@ -6,7 +6,6 @@
 class discourse-docker::clone { 
    # Ensure git is installed
    include git
-   include git::repo
 
   # clone repo
   git::repo{'discourse_docker':
