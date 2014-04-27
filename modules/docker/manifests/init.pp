@@ -1,17 +1,20 @@
 include apt
+class { "docker::update":
+    exec { "apt-get update":
+    command => "/usr/bin/apt-get update"
+    }
+}
 class { 'apt::release':
     release_id => 'precise',
 }
 
-class docker {
-    exec { "apt-get update":
-        command => "/usr/bin/apt-get update"
-    }
+class docker::install {
+
     apt::source { 'docker_repo':
         location   => 'https://get.docker.io/ubuntu',
-        repos      => 'docker main', 
-        key_server => 'keyserver.ubuntu.com',
-        key        =>  'A88D21E9',
+                   repos      => 'docker main', 
+                   key_server => 'keyserver.ubuntu.com',
+                   key        =>  'A88D21E9',
     }
     package { "linux-image-generic-lts-raring":
         ensure => present,
@@ -21,7 +24,6 @@ class docker {
     }
     package { "lxc-docker":
         ensure  => present,
-        require => Exec['apt-get update'],
     }
     exec { "you need to reboot":
         command => "/usr/bin/echo \"You need to reboot this server.\""

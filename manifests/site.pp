@@ -25,11 +25,12 @@ node 'csa-bastion2' {
 }
 
 node 'csa-discourse-web1' {
-	class { 'base' : stage                       => prep }
-	class { 'hosts::external' : stage            => prep }
-	class { 'monitoring-agent' : stage           => prep }
-	class { 'monitoring-agent::config' : stage   => post }
-	class { 'docker' : stage                     => prep }
+	class { 'base' : stage                     => prep }
+	class { 'hosts::external' : stage          => prep }
+	class { 'monitoring-agent' : stage         => prep }
+	class { 'monitoring-agent::config' : stage => post }
+	class { 'docker::update' : stage           => prep }
+    class { 'docker::install' : stage          => main }
     class { 'discourse-docker::clone' : stage  => main }
     class { 'discourse-docker::config' : stage => main }
     class { 'discourse-docker::setup' : stage  => post }
@@ -43,7 +44,8 @@ node 'csa-discourse-web2' {
 	class { 'hosts::external' : stage          => prep }
 	class { 'monitoring-agent' : stage         => prep }
 	class { 'monitoring-agent::config' : stage => post }
-	class { 'docker' : stage                   => prep }
+	class { 'docker::update' : stage           => prep }
+    class { 'docker::install' : stage          => main }
     class { 'discourse-docker::clone' : stage  => prep }
     class { 'discourse-docker::config' : stage => main }
     class { 'discourse-docker::setup' : stage  => post }
