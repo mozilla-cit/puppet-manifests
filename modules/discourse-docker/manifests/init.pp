@@ -10,10 +10,14 @@ class discourse-docker::clone {
   }
 
   # clone repo
-  exec { 'clone discourse-docker repo':
-    command => "/usr/bin/git clone https://github.com/discourse/discourse_docker.git /var/docker"
-    }
+  git::repo{'discourse_docker':
+  path   => '/var/docker',
+  source => 'https://github.com/discourse/discourse_docker.git'
 }
+
+}
+
+
 
 class discourse-docker::config {
   # Copy config
