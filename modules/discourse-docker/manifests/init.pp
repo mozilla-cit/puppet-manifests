@@ -6,12 +6,12 @@
 class { 'discourse-docker::clone': 
   stage => prep,
     # Ensure git is installed
-  package { "git":
+  package { 'git':
     ensure => installed
   },
 
   # clone repo
-  exec { "clone discourse-docker repo":
+  exec { 'clone discourse-docker repo':
     command => "/usr/bin/git clone https://github.com/discourse/discourse_docker.git /var/docker"
     }
 }
@@ -26,12 +26,12 @@ class { 'discourse-docker::config':
 class { 'discourse-docker::setup':
   stage => post,
 # Bootstrap app
-  exec { "bootstrap Discourse":
+  exec { 'bootstrap Discourse':
     command => '/var/docker/launcher bootstrap app'
   },
 
 # Start app
-  exec { "start Discourse":
+  exec { 'start Discourse':
     command => '/var/docker/launcher start app'
   }
 }
