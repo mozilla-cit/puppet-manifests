@@ -8,7 +8,7 @@ class { 'discourse-docker::clone':
    # Ensure git is installed
   package { "git":
     ensure => installed,
-  },
+  }
 
   # clone repo
   exec { 'clone discourse-docker repo':
