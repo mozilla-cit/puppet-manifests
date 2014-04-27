@@ -13,6 +13,7 @@ class docker::install {
     exec { 'add docker repo':
         command => "/bin/sh -c \"echo deb https://get.docker.io/ubuntu docker main\
         > /etc/apt/sources.list.d/docker.list\""
+    }
     package { "linux-image-generic-lts-raring":
         ensure => present,
     }
