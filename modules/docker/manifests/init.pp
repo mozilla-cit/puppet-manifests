@@ -1,10 +1,10 @@
 include apt
-class { "docker::update":
-    exec { "apt-get update":
+class { docker::update:
+    exec { 'apt-get update':
     command => "/usr/bin/apt-get update"
     }
 }
-class { 'apt::release':
+class { apt::release:
     release_id => 'precise',
 }
 
@@ -24,8 +24,5 @@ class docker::install {
     }
     package { "lxc-docker":
         ensure  => present,
-    }
-    exec { "you need to reboot":
-        command => "/usr/bin/echo \"You need to reboot this server.\""
     }
 }
