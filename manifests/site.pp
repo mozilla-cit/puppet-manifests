@@ -30,7 +30,7 @@ node 'csa-discourse-web1' {
 	class { 'monitoring-agent' : stage           => prep }
 	class { 'monitoring-agent::config' : stage   => post }
 	class { 'docker' : stage                     => prep }
-    class { 'discourse-docker::clone' : stage  => prep }
+    class { 'discourse-docker::clone' : stage  => main }
     class { 'discourse-docker::config' : stage => main }
     class { 'discourse-docker::setup' : stage  => post }
 	realize Users::Account['tanner']
