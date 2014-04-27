@@ -4,9 +4,6 @@ class docker::update {
       command => "/usr/bin/apt-get update",
     }
 }
-class { apt::release:
-    release_id => 'precise',
-}
 
 class docker::install {
 
