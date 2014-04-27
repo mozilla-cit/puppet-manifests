@@ -15,7 +15,7 @@ class discourse-docker {
     }
 
 # Copy config
-include 'discourse-docker::config'
+include 'discourse-docker::app'
 
 # Bootstrap app
   exec { "bootstrap Discourse":
