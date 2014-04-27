@@ -4,11 +4,11 @@
 # Class: discourse-docker
 
 class { 'discourse-docker::clone': 
-    stage => prep,
+  stage => prep,
     # Ensure git is installed
-    package { "git":
-      ensure => installed,
-    },
+  package { "git":
+    ensure => installed
+  },
 
   # clone repo
   exec { "clone discourse-docker repo":
@@ -18,13 +18,13 @@ class { 'discourse-docker::clone':
 
 class { 'discourse-docker::config':
     stage => main,
-# Copy config
-include 'discourse-docker::app'
+  # Copy config
+  include 'discourse-docker::app'
 
 }
 
 class { 'discourse-docker::setup':
-    stage => post,
+  stage => post,
 # Bootstrap app
   exec { "bootstrap Discourse":
     command => '/var/docker/launcher bootstrap app'
