@@ -8,7 +8,7 @@ class { 'discourse-docker::clone':
     # Ensure git is installed
     package { "git":
       ensure => installed,
-    }
+    },
 
   # clone repo
   exec { "clone discourse-docker repo":
@@ -28,7 +28,7 @@ class { 'discourse-docker::setup':
 # Bootstrap app
   exec { "bootstrap Discourse":
     command => '/var/docker/launcher bootstrap app'
-  }
+  },
 
 # Start app
   exec { "start Discourse":
