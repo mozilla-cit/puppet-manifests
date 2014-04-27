@@ -10,7 +10,7 @@ Stage['main'] -> Stage['last']
 
 
 # Class: discourse-docker
-class discourse-docker-clone {
+class discourse-docker::clone {
     stage => first,
     # Ensure git is installed
     package { "git":
@@ -23,14 +23,14 @@ class discourse-docker-clone {
     }
 }
 
-class discourse-docker-config {
+class discourse-docker::config {
     stage => main,
 # Copy config
 include 'discourse-docker::app'
 
 }
 
-class discourse-docker-setup {
+class discourse-docker::setup {
     stage => last,
 # Bootstrap app
   exec { "bootstrap Discourse":
