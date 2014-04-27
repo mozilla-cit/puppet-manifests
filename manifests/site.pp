@@ -12,6 +12,9 @@ class base {
 node 'csa-bastion1' {
 	class { 'base' : stage => prep }
 	class { 'hosts::local' : stage => prep }
+	realize Users::Account['yousef']
+	realize Users::Account['logan']
+	realize Users::Account['tanner']
 
 }
 
