@@ -6,8 +6,8 @@
 class { 'discourse-docker::clone': 
   stage => prep,
     # Ensure git is installed
-  package { 'git':
-    ensure => installed
+  package { "git":
+    ensure => installed,
   },
 
   # clone repo
