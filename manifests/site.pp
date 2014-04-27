@@ -30,7 +30,7 @@ node 'csa-discourse-web1' {
 	class { 'monitoring-agent' : stage         => prep }
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker::update' : stage           => prep }
-    class { 'docker::install' : stage          => main }
+    class { 'docker::install' : stage          => prep }
     class { 'discourse-docker::clone' : stage  => main }
     class { 'discourse-docker::config' : stage => main }
     class { 'discourse-docker::setup' : stage  => post }
@@ -45,7 +45,7 @@ node 'csa-discourse-web2' {
 	class { 'monitoring-agent' : stage         => prep }
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker::update' : stage           => prep }
-    class { 'docker::install' : stage          => main }
+    class { 'docker::install' : stage          => prep }
     class { 'discourse-docker::clone' : stage  => prep }
     class { 'discourse-docker::config' : stage => main }
     class { 'discourse-docker::setup' : stage  => post }
