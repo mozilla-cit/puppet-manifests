@@ -16,6 +16,3 @@
 [submodule "modules/rvm"]
 	path = modules/rvm
 	url = https://github.com/maestrodev/puppet-rvm
-[submodule "modules/git"]
-	path = modules/git
-	url = git://github.com/nesi/puppet-git.git
