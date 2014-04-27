@@ -16,7 +16,7 @@
 #
 # $bare::       If this is true, git will create a bare repository
 
-define git::repo(
+define git::repo {
   $path,
   $source   = false,
   $branch   = undef,
@@ -25,7 +25,7 @@ define git::repo(
   $group    = 'root',
   $update   = false,
   $bare     = false
-){
+
 
   require git
   require git::params
@@ -99,4 +99,5 @@ define git::repo(
     }
   }
 
+}
 }
