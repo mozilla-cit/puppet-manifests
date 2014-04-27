@@ -5,6 +5,7 @@ class base {
 	include users
 	include motd
 	include hosts
+	include git
 	realize Users::Account['tad']
 	realize Users::Account['will']
 	realize Users::Account['mrz']
