@@ -3,12 +3,12 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 # Class: discourse-docker
 
-#class { 'discourse-docker::clone': 
-#  stage => prep,
-    # Ensure git is installed
-#  package { "git":
-#    ensure => installed,
-#  },
+class { 'discourse-docker::clone': 
+  stage => prep,
+   # Ensure git is installed
+  package { "git":
+    ensure => installed,
+  },
 
   # clone repo
   exec { 'clone discourse-docker repo':
