@@ -1,5 +1,5 @@
 include apt
-class { docker::update:
+class docker::update {
     exec { 'apt-get update':
       command => "/usr/bin/apt-get update",
     }
