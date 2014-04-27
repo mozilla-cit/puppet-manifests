@@ -6,7 +6,6 @@ class { 'apt::release':
 class docker {
     exec { "apt-get update":
         command => "/usr/bin/apt-get update"
-         require => apt::source['docker_repo']
     }
     apt::source { 'docker_repo':
         location   => 'https://get.docker.io/ubuntu',
