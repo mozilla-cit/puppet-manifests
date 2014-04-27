@@ -24,11 +24,13 @@ class discourse-docker::config {
 class discourse-docker::setup {
 # Bootstrap app
   exec { 'bootstrap Discourse':
-    command => '/var/docker/launcher bootstrap app'
+    command => '/var/docker/launcher bootstrap app',
+    timeout => 0
   }
 
 # Start app
   exec { 'start Discourse':
-    command => '/var/docker/launcher start app'
+    command => '/var/docker/launcher start app',
+    timeout => 0
   }
 }
