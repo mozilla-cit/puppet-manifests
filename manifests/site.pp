@@ -54,6 +54,18 @@ node 'csa-discourse-web2' {
 	realize Users::Account['logan']
 }
 
+node 'csa-docker-registry' {
+	class { 'base' : stage                     => prep }
+	class { 'hosts::external' : stage          => prep }
+	class { 'monitoring-agent' : stage         => prep }
+	class { 'monitoring-agent::config' : stage => post }
+	class { 'docker::update' : stage           => prep }
+	class { 'docker::install' : stage          => main }
+	realize Users::Account['tanner']
+	realize Users::Account['yousef']
+	realize Users::Account['logan']
+}
+
 node 'csa-wpmu-web1' {
 	class { 'base' : stage => prep }
 	class { 'monitoring-agent' : stage => prep }
