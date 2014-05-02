@@ -79,3 +79,8 @@ node 'csa-wpmu-web2' {
 	realize Users::Account['logan']
 	class { 'hosts::local' : stage => prep }
 }
+
+
+node 'csa-puppet1' {
+	class { 'base' : stage => prep }
+}
