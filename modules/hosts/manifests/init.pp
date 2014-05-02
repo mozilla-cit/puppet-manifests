@@ -55,6 +55,9 @@ host { 'csa-discourse-web1':
 host { 'csa-discourse-dev':
     ip => '50.18.122.184',
 }
+host { 'csa-discourse-registry':
+    ip =>  '54.241.7.35',
+}
 }
 
 # Class: hosts::local
