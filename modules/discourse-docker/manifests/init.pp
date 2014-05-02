@@ -17,9 +17,15 @@ class discourse-docker::clone {
 
 
 
-class discourse-docker::config {
+class discourse-docker::production {
   # Copy config
   include 'discourse-docker::app'
+
+}
+
+class discourse-docker::dev {
+  # Copy config
+  include 'discourse-docker::devapp'
 
 }
 

@@ -32,7 +32,7 @@ node 'csa-discourse-web1' {
 	class { 'docker::update' : stage           => prep }
     class { 'docker::install' : stage          => main }
     class { 'discourse-docker::clone' : stage  => post }
-    class { 'discourse-docker::config' : stage => post }
+    class { 'discourse-docker::production' : stage => post }
     class { 'discourse-docker::setup' : stage  => post }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
@@ -47,7 +47,7 @@ node 'csa-discourse-web2' {
 	class { 'docker::update' : stage           => prep }
     class { 'docker::install' : stage          => main }
     class { 'discourse-docker::clone' : stage  => post }
-    class { 'discourse-docker::config' : stage => post }
+    class { 'discourse-docker::production' : stage => post }
     class { 'discourse-docker::setup' : stage  => post }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
