@@ -83,4 +83,7 @@ node 'csa-wpmu-web2' {
 
 node 'csa-puppet1' {
 	class { 'base' : stage => prep }
+	realize Users::Account['logan']
+	realize Users::Account['tanner']
+	realize Users::Account['yousef']
 }
