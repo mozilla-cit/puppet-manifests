@@ -54,6 +54,21 @@ node 'csa-discourse-web2' {
 	realize Users::Account['logan']
 }
 
+node 'csa-discourse-dev' {
+	class { 'base' : stage                     => prep }
+	class { 'hosts::external' : stage          => prep }
+	class { 'monitoring-agent' : stage         => prep }
+	class { 'monitoring-agent::config' : stage => post }
+	class { 'docker::update' : stage           => prep }
+	class { 'docker::install' : stage          => main }
+	class { 'discourse-docker::clone' : stage  => post }
+	class { 'discourse-docker::dev' : stage => post }
+	class { 'discourse-docker::setup' : stage  => post }
+	realize Users::Account['tanner']
+	realize Users::Account['yousef']
+	realize Users::Account['logan']
+}
+
 node 'csa-docker-registry' {
 	class { 'base' : stage                     => prep }
 	class { 'hosts::external' : stage          => prep }
