@@ -31,9 +31,9 @@ node 'csa-discourse-web1' {
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker::update' : stage           => prep }
     class { 'docker::install' : stage          => main }
-    class { 'discourse-docker::clone' : stage  => post }
-    class { 'discourse-docker::production' : stage => post }
-    class { 'discourse-docker::setup' : stage  => post }
+    class { 'discourse_docker::clone' : stage  => post }
+    class { 'discourse_docker::production' : stage => post }
+    class { 'discourse_docker::setup' : stage  => post }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
 	realize Users::Account['logan']
@@ -46,9 +46,9 @@ node 'csa-discourse-web2' {
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker::update' : stage           => prep }
     class { 'docker::install' : stage          => main }
-    class { 'discourse-docker::clone' : stage  => post }
-    class { 'discourse-docker::production' : stage => post }
-    class { 'discourse-docker::setup' : stage  => post }
+    class { 'discourse_docker::clone' : stage  => post }
+    class { 'discourse_docker::production' : stage => post }
+    class { 'discourse_docker::setup' : stage  => post }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
 	realize Users::Account['logan']
@@ -61,9 +61,9 @@ node 'csa-discourse-dev' {
 	class { 'monitoring-agent::config' : stage => post }
 	class { 'docker::update' : stage           => prep }
 	class { 'docker::install' : stage          => main }
-	class { 'discourse-docker::clone' : stage  => post }
-	class { 'discourse-docker::dev' : stage => post }
-	class { 'discourse-docker::setup' : stage  => post }
+	class { 'discourse_docker::clone' : stage  => post }
+	class { 'discourse_docker::dev' : stage => post }
+	class { 'discourse_docker::setup' : stage  => post }
 	realize Users::Account['tanner']
 	realize Users::Account['yousef']
 	realize Users::Account['logan']

@@ -1,9 +1,10 @@
+# Install a custom MOTD file
 class motd {
-	file {'/etc/motd':
-      	ensure  => present,
-      	mode    => 0644,
-      	owner   => root,
-      	group   => root,
-      	source => "puppet:///modules/motd/motd"
-    }
+  file {'/etc/motd':
+  ensure  => present,
+  mode    => '0644',
+  owner   => root,
+  group   => root,
+  source  => 'puppet:///modules/motd/motd'
+  }
 }
