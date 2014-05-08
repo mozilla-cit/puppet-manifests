@@ -1,0 +1,64 @@
+server {
+        ##DM - uncomment following line for domain mapping	
+        #listen 80 default_server;
+        listen 80;
+	listen 443 ssl spdy;
+	ssl_certificate /etc/nginx/ssl/wpms.crt;
+	ssl_certificate_key /etc/nginx/ssl/wpms.key;
+	#server_name wpms-1.communitysysadmins.org wpms.communitysysadmins.org blog.communitysysadmins.org;
+	server_name ~^(.+)$;
+	##DM - uncomment following line for domain mapping
+	server_name_in_redirect off;
+
+	access_log   /var/log/nginx/wordpress.access.log;
+	error_log    /var/log/nginx/wordpress.error.log;
+
+	root /var/www/wordpress;
+	index index.php;
+
+	if (!-e $request_filename) {
+		rewrite /wp-admin$ $scheme://$host$uri/ permanent;     
+		rewrite ^(/[^/]+)?(/wp-.*) $2 last;                    
+		rewrite ^(/[^/]+)?(/.*\.php) $2 last;
+	}
+
+	set $cache_uri $request_uri;
+
+	# POST requests and urls with a query string should always go to PHP
+	if ($request_method = POST) {
+		set $cache_uri 'NULL';
+	}
+	if ($query_string != "") {
+		set $cache_uri 'NULL';
+	}
+
+	# Don't cache uris containing the following segments
+	if ($request_uri ~* "(/wp-admin/|/xmlrpc.php|/wp-(app|cron|login|register|mail).php|wp-.*.php|/feed/|index.php|wp-comments-popup.php|wp-links-opml.php|wp-locations.php|sitemap(_index)?.xml|[a-z0-9_-]+-sitemap([0-9]+)?.xml)") {
+		set $cache_uri 'NULL';
+	}
+
+	# Don't use the cache for logged in users or recent commenters
+	if ($http_cookie ~* "comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_logged_in") {
+		set $cache_uri 'NULL';
+	}
+
+	include /var/www/wordpress/nginx.conf;
+
+	# Use cached or actual file if they exists, otherwise pass request to WordPress
+	location / {
+		 try_files /wp-content/cache/page_enhanced/${host}${cache_uri}_index.html $uri $uri/ /index.php?$args ;
+	}
+
+	location ~ \.php$ {
+		try_files $uri /index.php;
+		include fastcgi_params;
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
+	}
+
+	location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+		access_log off;	log_not_found off; expires max;
+	}
+
+	location = /robots.txt { access_log off; log_not_found off; }
+	location ~ /\. { deny  all; access_log off; log_not_found off; }
+}
