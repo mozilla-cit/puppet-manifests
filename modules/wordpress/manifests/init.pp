@@ -8,7 +8,7 @@ class wordpress {
   }
 
   exec { 'wp':
-    command => '/usr/bin/git clone https://github.com/WordPress/WordPress /var/www/wordpress',
+    command => '/usr/bin/git clone -b "3.9.1" https://github.com/WordPress/WordPress /var/www/wordpress',
     require => File['/var/www'],
   }
 
