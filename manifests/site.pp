@@ -73,13 +73,15 @@ node 'csa-wpmu-web1' {
   class { 'monitoring_agent' : stage => prep }
   class { 'hosts::local' : stage => prep }
   realize Users::Account['logan']
+  realize Users::Account['tanner']
 }
 
 node 'csa-wpmu-web2' {
   class { 'base' : stage => prep }
   class { 'monitoring_agent' : stage => prep }
-  realize Users::Account['logan']
   class { 'hosts::local' : stage => prep }
+  realize Users::Account['logan']
+  realize Users::Account['tanner']
 }
 
 node 'csa-puppet1' {
