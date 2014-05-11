@@ -90,3 +90,10 @@ node 'csa-puppet1' {
   realize Users::Account['tanner']
   realize Users::Account['yousef']
 }
+
+node 'csa-monitor1' {
+  class { 'base' : stage => prep }
+  realize Users::Account['tanner']
+  realize Users::Account['yousef']
+  realize Users::Account['logan']
+}
