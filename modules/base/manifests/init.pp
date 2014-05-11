@@ -6,7 +6,6 @@ class base {
   include motd
   include hosts
   include git
-  include apt
   include puppet
   realize Users::Account['tad']
   realize Users::Account['will']
