@@ -12,10 +12,6 @@ class hosts {
     ip => '10.0.0.8',
   }
 
-  host { 'csa-docker1':
-    ip => '10.0.0.10',
-  }
-
   host { 'csa-phab-web1':
     ip => '10.0.0.12',
   }
@@ -36,14 +32,6 @@ class hosts {
     ip => '10.0.0.19',
   }
 
-  host { 'csa-wpmu-proxy2':
-    ip => '10.0.0.22',
-  }
-
-  host { 'csa-wpmu-proxy1':
-    ip => '10.0.0.23',
-  }
-
   host { 'csa-discourse-web2':
     ip => '50.18.123.122',
   }
@@ -56,7 +44,7 @@ class hosts {
     ip => '50.18.122.184',
   }
 
-  host { 'csa-discourse-registry':
+  host { 'csa-docker-registry':
     ip =>  '54.241.7.35',
   }
 }
