@@ -7,14 +7,20 @@ class wordpress {
     ensure  => directory,
   }
 
-  exec { 'wp':
-    command => '/usr/bin/git clone -b "3.9.1" https://github.com/WordPress/WordPress /var/www/wordpress',
+  file { '/var/www/wordpress-3.9.1.zip':
+    ensure  => present,
+    source  => 'puppet:///modules/wordpress/wordpress-3.9.1.zip',
     require => File['/var/www'],
   }
 
-  file { '/var/www/wordpress/wp-config.php':
-    ensure  => present,
-    source  => 'puppet:///modules/wordpress/wp-config.php',
+  exec { 'wp':
+    command => 'unzip /var/www/wordpress-3.9.1.zip -d /var/www',
+    require => File['/var/www/wordpress-3.9.1.zip'],
+  }
+
+  file { '/mnt/wpmu/wp-content':
+    ensure  => link,
+    source  => '/var/www/wordpress/wp-content',
     require => Exec['wp'],
   }
 
@@ -28,9 +34,9 @@ class wordpress {
     ensure  => directory,
   }
 
-  file { '/etc/nginx/sites-enabled/nginx':
+  file { '/etc/nginx/sites-enabled/wordpress.conf':
     ensure  => present,
-    source  => 'puppet:///modules/wordpress/nginx',
+    source  => 'puppet:///modules/wordpress/wordpress.conf',
     require => File['/etc/nginx/sites-enabled'],
   }
 
