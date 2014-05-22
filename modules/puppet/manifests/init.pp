@@ -1,6 +1,7 @@
 # Installs the latest Puppet from the apt repo
 class puppet {
-  include apt
+  class { 'apt': }
+
   apt::source { 'puppetlabs':
     location   => 'https://apt.puppetlabs.com',
     repos      => 'main dependencies',
