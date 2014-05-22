@@ -10,6 +10,6 @@ class puppet {
 
   package { 'puppet-common':
     ensure  => latest,
-    require => Apt::Source[puppetlabs]
+    require => Apt::Source['puppetlabs']
   }
 }
