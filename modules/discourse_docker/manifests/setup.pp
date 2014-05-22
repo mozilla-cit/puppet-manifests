@@ -9,6 +9,11 @@ class discourse_docker::setup {
     timeout => 0
   }
 
+  exec { 'destroy Discourse':
+    command => '/var/docker/launcher destroy app',
+    timeout => 0
+  }
+
   exec { 'start Discourse':
     command => '/var/docker/launcher start app',
     timeout => 0
