@@ -4,13 +4,13 @@
 
 # Bootstraps and starts the app
 class discourse_docker::setup {
-  exec { 'bootstrap Discourse':
-    command => '/var/docker/launcher bootstrap app',
+  exec { 'destroy Discourse':
+    command => '/var/docker/launcher destroy app',
     timeout => 0
   }
 
-  exec { 'destroy Discourse':
-    command => '/var/docker/launcher destroy app',
+  exec { 'bootstrap Discourse':
+    command => '/var/docker/launcher bootstrap app',
     timeout => 0
   }
 
