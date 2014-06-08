@@ -9,6 +9,9 @@ node 'csa-bastion1' {
 }
 
 node 'csa-bastion2' {
+  class { 'base' : stage => prep }
+  class { 'hosts::local' : stage => prep }
+  class { 'puppet' : stage => prep }
 }
 
 node 'csa-discourse-web1' {
