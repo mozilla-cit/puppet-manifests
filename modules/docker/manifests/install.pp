@@ -2,12 +2,11 @@ include apt
 
 # Installs Docker
 class docker::install {
-  apt::key { 'docker_key':
-    key_server => 'keyserver.ubuntu.com',
-    key        =>  'A88D21E9',
+  exec { "key":
+    command => "sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"",
   }
 
-  exec { 'add docker repo':
+  exec { 'add_docker_repo':
     provider => shell,
     command  => 'echo deb https://get.docker.io/ubuntu docker main\
       > /etc/apt/sources.list.d/docker.list'
