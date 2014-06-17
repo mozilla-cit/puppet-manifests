@@ -11,6 +11,7 @@ node 'csa-bastion1' {
 node 'csa-bastion2' {
   class { 'base' : stage => prep }
   class { 'hosts::local' : stage => prep }
+  realize Users::Account['tanner']
 }
 
 node 'csa-discourse-web1' {
