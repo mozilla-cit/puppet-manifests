@@ -1,5 +1,3 @@
-include apt
-
 # Installs Docker
 class docker::install {
   exec { "key":
