@@ -1,7 +1,7 @@
 # Installs Docker
 class docker::install {
   exec { "key":
-    command => 'sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"',
+    command => "wget -qO- https://get.docker.io/gpg | apt-key add -",
   }
 
   exec { 'add_docker_repo':
