@@ -10,7 +10,7 @@ class puppet {
   }
 
   package { 'puppet-common':
-    ensure  => 3.6.2,
+    ensure  => "3.6.2",
     require => Apt::Source['puppetlabs']
   }
 }
