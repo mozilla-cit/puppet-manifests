@@ -16,3 +16,6 @@
 [submodule "modules/rvm"]
 	path = modules/rvm
 	url = https://github.com/maestrodev/puppet-rvm
+[submodule "modules/puppet-nrsysmond"]
+	path = modules/nrsysmond
+	url = https://github.com/newrelic/puppet-nrsysmond.git
