@@ -1,4 +1,5 @@
 include runstages
+include nr-config
 
 node 'csa-bastion1' {
   class { 'base' : stage => prep }
