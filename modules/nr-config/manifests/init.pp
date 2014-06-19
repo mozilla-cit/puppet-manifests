@@ -1,1 +1,1 @@
-include nr-config.pp
+import nr-config.pp
