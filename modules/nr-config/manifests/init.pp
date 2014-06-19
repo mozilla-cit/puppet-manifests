@@ -1,3 +1,3 @@
 class nr-config {
-  include users::nr-config
+  include nr-config::nr-config
 }
