@@ -1,5 +1,4 @@
 include runstages
-include nr-config::nrsysmond
 
 node 'csa-bastion1' {
   class { 'base' : stage => prep }
@@ -12,6 +11,7 @@ node 'csa-bastion1' {
 node 'csa-bastion2' {
   class { 'base' : stage => prep }
   class { 'hosts::local' : stage => prep }
+  class { 'nrsysmond' : stage => main }
   realize Users::Account['tanner']
 }
 
