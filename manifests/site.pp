@@ -92,3 +92,9 @@ node 'csa-monitor1' {
   realize Users::Account['yousef']
   realize Users::Account['logan']
 }
+
+node 'csa-phab-web1' {
+  class { 'base' : stage => prep }
+  class { 'hosts::local' : stage => prep }
+  realize Users::Account['tanner']
+}
