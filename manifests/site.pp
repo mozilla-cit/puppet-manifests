@@ -1,5 +1,5 @@
 include runstages
-include nr-config
+include nr-config::nrsysmond
 
 node 'csa-bastion1' {
   class { 'base' : stage => prep }
