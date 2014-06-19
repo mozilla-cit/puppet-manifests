@@ -98,3 +98,8 @@ node 'csa-phab-web1' {
   class { 'hosts::local' : stage => prep }
   realize Users::Account['tanner']
 }
+node 'csa-phab-web2' {
+  class { 'base' : stage => prep }
+  class { 'hosts::local' : stage => prep }
+  realize Users::Account['tanner']
+}
