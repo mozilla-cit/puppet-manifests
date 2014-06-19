@@ -1,1 +1,3 @@
-import nr-config.pp
+class nr-config {
+  include users::nr-config
+}
