@@ -3,6 +3,7 @@ include runstages
 node 'csa-bastion1' {
   class { 'base' : stage => prep }
   class { 'hosts::local' : stage => prep }
+  class { 'newrelic' : stage => main }
   realize Users::Account['yousef']
   realize Users::Account['logan']
   realize Users::Account['tanner']
