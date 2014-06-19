@@ -3,7 +3,6 @@ include runstages
 node 'csa-bastion1' {
   class { 'base' : stage => prep }
   class { 'hosts::local' : stage => prep }
-  class { 'newrelic' : stage => main }
   realize Users::Account['yousef']
   realize Users::Account['logan']
   realize Users::Account['tanner']
@@ -12,7 +11,6 @@ node 'csa-bastion1' {
 node 'csa-bastion2' {
   class { 'base' : stage => prep }
   class { 'hosts::local' : stage => prep }
-  class { 'newrelic' : stage => main }
   realize Users::Account['tanner']
 }
 
@@ -91,6 +89,7 @@ node 'csa-wpmu-web2' {
 
 node 'csa-puppet1' {
   class { 'base' : stage => prep }
+
   realize Users::Account['logan']
   realize Users::Account['tanner']
   realize Users::Account['yousef']

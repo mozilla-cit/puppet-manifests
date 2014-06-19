@@ -7,6 +7,7 @@ class base {
   include hosts
   include git
   include puppet
+  include newrelic
   realize Users::Account['tad']
   realize Users::Account['will']
   realize Users::Account['mrz']
