@@ -6,6 +6,7 @@ node 'csa-bastion1' {
   realize Users::Account['yousef']
   realize Users::Account['logan']
   realize Users::Account['tanner']
+  realize Users::Account['pancakes']
 }
 
 node 'csa-bastion2' {
@@ -91,6 +92,7 @@ node 'csa-monitor1' {
   realize Users::Account['tanner']
   realize Users::Account['yousef']
   realize Users::Account['logan']
+  realize Users::Account['pancakes']
 }
 
 node 'csa-phab-web1' {
