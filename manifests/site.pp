@@ -11,7 +11,7 @@ node 'csa-bastion1' {
 node 'csa-bastion2' {
   class { 'base' : stage => prep }
   class { 'hosts::local' : stage => prep }
-  class { 'nrsysmond' : stage => main }
+  class { 'newrelic' : stage => main }
   realize Users::Account['tanner']
 }
 
