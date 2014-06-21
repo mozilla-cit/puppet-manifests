@@ -18,7 +18,7 @@ include apt
     file { '/etc/puppet/puppet.conf':
         ensure => present,
         source => $::fqdn ? {
-            'master.fqdn' => 'puppet:///modules/puppet/master.conf',
+            'csa-puppet1.fqdn' => 'puppet:///modules/puppet/master.conf',
             default => 'puppet:///modules/puppet/agent.conf'
     }
 }
