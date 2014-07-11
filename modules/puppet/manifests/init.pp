@@ -1,24 +1,29 @@
-# Installs the latest Puppet from the apt repo
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 class puppet {
 include apt
 
-    apt::source { 'puppetlabs':
-        location   => 'https://apt.puppetlabs.com',
-        repos      => 'main dependencies',
-        key        => '4BD6EC30',
-        key_server => 'pgp.mit.edu',
-    }
+  # Specifies source information for Puppet
+  apt::source { 'puppetlabs':
+    location   => 'https://apt.puppetlabs.com',
+    repos      => 'main dependencies',
+    key        => '4BD6EC30',
+    key_server => 'pgp.mit.edu',
+  }
 
-    package { 'puppet-common':
-        ensure  => "3.6.2-1puppetlabs1",
-        require => Apt::Source['puppetlabs']
-    }
+  # Installs Puppet 3.6.2 from the specified apt source
+  package { 'puppet-common':
+    ensure  => "3.6.2-1puppetlabs1",
+    require => Apt::Source['puppetlabs']
+  }
 
-    file { '/etc/puppet/puppet.conf':
-        ensure => present,
-        source => $::fqdn ? {
-            'csa-puppet1.fqdn' => 'puppet:///modules/puppet/master.conf',
-            default => 'puppet:///modules/puppet/agent.conf'
-    }
+  # Places the configuration file
+  file { '/etc/puppet/puppet.conf':
+    ensure => present,
+    source => $::fqdn ? {
+      'csa-puppet1.fqdn' => 'puppet:///modules/puppet/master.conf',
+      default => 'puppet:///modules/puppet/agent.conf'
+  }
 }
